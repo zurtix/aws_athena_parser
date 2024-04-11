@@ -14,14 +14,16 @@ pub fn from_athena(input: TokenStream) -> TokenStream {
                 let name = &field.ident;
                 let ty = &field.ty;
 
-                quote!(#name: row[0].2.parse::<#ty>()?)
+                quote!(#name: row.get(stringify!(#name))
+                    .ok_or(anyhow::Error::msg(format!("Missing field within result set: {}", stringify!(#name))))?
+                .parse::<#ty>()?)
             });
 
             let name = input.ident;
 
             return TokenStream::from(quote!(
             impl FromAthena for #name {
-                fn from_athena(row: Vec<(String,String,String)>) -> Result<Self, anyhow::Error> {
+                fn from_athena(row: HashMap<String, String>) -> Result<Self, anyhow::Error> {
                     Ok(Self {
                         #(#field_vals),*
                     })
@@ -33,8 +35,8 @@ pub fn from_athena(input: TokenStream) -> TokenStream {
     TokenStream::from(
         syn::Error::new(
             input.ident.span(),
-            "Only structs with named fields can derive `FromRow`",
+            "Only structs with named fields can derive `FromAthena`",
         )
         .to_compile_error(),
-    ) // Return the generated code as a TokenStream
+    )
 }
