@@ -1,0 +1,11 @@
+[package]
+name = "aws_athena_parser"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+aws-sdk-athena = "1.19.0"
+tokio = { version = "1", features = ["full"] }
+parser_macro = { path = "../parser_macro" }
+anyhow = "1.0.82"
