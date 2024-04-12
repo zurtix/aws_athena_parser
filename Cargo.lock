@@ -31,7 +31,7 @@ checksum = "f1fdabc7756949593fe60f30ec81974b613357de856987752631dea1e3394c80"
 
 [[package]]
 name = "aws-athena-parser"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "aws-sdk-athena",
@@ -408,7 +408,7 @@ dependencies = [
 
 [[package]]
 name = "from-athena-derive"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "aws-sdk-athena",
