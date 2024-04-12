@@ -6,6 +6,8 @@ The purpose of this package is to provide an easy method of turning the external
 
 ## Usage
 
+Ensure that named values within your struct correspond to the column names of the Athena query result set.
+
 
 ```rust
 use aws_athena_pasrer::{FromAthenam, build_map};
