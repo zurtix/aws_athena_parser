@@ -1,6 +1,6 @@
 [package]
 name = "aws-athena-parser"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "Athena parser to convert Athena ResultSet into user defined Structs"
@@ -8,6 +8,7 @@ repository = "https://github.com/Surphix/aws_athena_parser"
 keywords = ["database", "aws", "athena"]
 categories = ["database"]
 authors = ["Eric Howard <erichoward@live.ca>"]
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
