@@ -30,6 +30,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1fdabc7756949593fe60f30ec81974b613357de856987752631dea1e3394c80"
 
 [[package]]
+name = "aws-athena-parser"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aws-sdk-athena",
+ "from-athena-derive",
+ "tokio",
+]
+
+[[package]]
 name = "aws-credential-types"
 version = "1.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -235,16 +245,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aws_athena_parser"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aws-sdk-athena",
- "parser_macro",
- "tokio",
-]
-
-[[package]]
 name = "backtrace"
 version = "0.3.71"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -404,6 +404,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e13624c2627564efccf4934284bdd98cbaa14e79b0b5a141218e507b3a823456"
 dependencies = [
  "percent-encoding",
+]
+
+[[package]]
+name = "from-athena-derive"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aws-sdk-athena",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -772,16 +782,6 @@ dependencies = [
  "redox_syscall",
  "smallvec",
  "windows-targets 0.48.5",
-]
-
-[[package]]
-name = "parser_macro"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aws-sdk-athena",
- "quote",
- "syn",
 ]
 
 [[package]]

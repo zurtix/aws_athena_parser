@@ -83,20 +83,19 @@ fn build_map(result_set: ResultSet) -> Vec<HashMap<String, String>> {
 mod test {
     use super::*;
     use aws_sdk_athena::types::{ColumnInfo, Datum, ResultSetMetadata, Row};
-    use parser_macro::FromAthena;
 
-    #[derive(FromAthena)]
+    #[derive(from_athena_derive::FromAthena)]
     struct Testing {
         pub test: i64,
     }
 
-    #[derive(FromAthena)]
+    #[derive(from_athena_derive::FromAthena)]
     #[allow(dead_code)]
     struct BadTesting {
         pub no_exist: String,
     }
 
-    #[derive(FromAthena)]
+    #[derive(from_athena_derive::FromAthena)]
     struct LargeStruct {
         pub test1: i64,
         pub test2: i32,
