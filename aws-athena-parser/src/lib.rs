@@ -51,8 +51,7 @@ pub trait FromAthena: Sized {
 /// let mapped_data = build_map(result_set);
 /// // Use mapped_data for further processing
 /// ```
-#[allow(dead_code)]
-fn build_map(result_set: ResultSet) -> Vec<HashMap<String, String>> {
+pub fn build_map(result_set: ResultSet) -> Vec<HashMap<String, String>> {
     if let Some(meta) = result_set.result_set_metadata() {
         let columns: Vec<String> = meta
             .column_info()
