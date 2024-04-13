@@ -1,6 +1,9 @@
 use aws_sdk_athena::types::ResultSet;
 use std::collections::HashMap;
 
+extern crate from_athena_derive;
+pub use from_athena_derive::FromAthena;
+
 /// A trait for converting data from an Athena query result into a specified type.
 ///
 /// This trait defines a method `from_athena` which converts a HashMap of string
