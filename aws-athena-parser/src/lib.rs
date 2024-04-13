@@ -1,8 +1,7 @@
+pub use anyhow;
 use aws_sdk_athena::types::ResultSet;
-use std::collections::HashMap;
-
-extern crate from_athena_derive;
 pub use from_athena_derive::FromAthena;
+pub use std::collections::HashMap;
 
 /// A trait for converting data from an Athena query result into a specified type.
 ///
@@ -48,7 +47,8 @@ pub trait FromAthena: Sized {
 /// # Examples
 ///
 /// ```
-/// use some_library::{ResultSet, build_map};
+/// use aws_sdk_athena::types::ResultSet;
+/// use aws_sdk_athena::build_map;
 ///
 /// let result_set = ResultSet::new(/* Some initialization */);
 /// let mapped_data = build_map(result_set);

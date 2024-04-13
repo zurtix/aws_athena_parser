@@ -10,7 +10,7 @@ Ensure that named values within your struct correspond to the column names of th
 
 
 ```rust
-use aws_athena_pasrer::{FromAthenam, build_map};
+use aws_athena_pasrer::{FromAthena, build_map};
 
 #[derive(FromAthena)]
 struct MyStruct {
